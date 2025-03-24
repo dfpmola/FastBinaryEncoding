@@ -7,6 +7,30 @@ import com.chronoxor.test.*;
 
 public class Print
 {
+    /**
+     * The main method serves as the entry point for the application. It demonstrates the usage of various
+     * struct types by creating instances of them, populating their fields, and printing their contents to
+     * the standard output.
+     *
+     * <p>This method performs the following actions:</p>
+     * <ul>
+     *   <li>Creates and prints instances of simple structs.</li>
+     *   <li>Creates and prints instances of optional structs.</li>
+     *   <li>Creates and prints instances of nested structs.</li>
+     *   <li>Demonstrates the use of byte buffers, arrays, vectors, lists, sets, maps, hashes, and extended hashes.</li>
+     * </ul>
+     *
+     * <p>Each struct type is populated with various data types, including bytes, enums, flags, and other
+     * structs. The method also handles null values appropriately.</p>
+     *
+     * @param args Command-line arguments passed to the application. This parameter is not used in this
+     *              implementation.
+     *
+     * @throws NullPointerException if any of the struct fields that are expected to be non-null are
+     *                              assigned a null value when they should not be.
+     * @throws IllegalArgumentException if any of the struct types are used incorrectly or if invalid
+     *                                   data is provided to them.
+     */
     public static void main(String[] args)
     {
         System.out.println(new StructSimple());

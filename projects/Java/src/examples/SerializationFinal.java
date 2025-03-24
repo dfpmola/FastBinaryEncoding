@@ -7,6 +7,29 @@ import com.chronoxor.proto.fbe.*;
 
 public class SerializationFinal
 {
+    /**
+     * The main method serves as the entry point for the application. It demonstrates the creation,
+     * serialization, and deserialization of an account with associated orders.
+     *
+     * <p>This method performs the following steps:</p>
+     * <ol>
+     *   <li>Creates a new account with a specified ID, name, state, and balances in different currencies.</li>
+     *   <li>Adds several orders to the account, including buy and sell orders with different types.</li>
+     *   <li>Serializes the account object into a FBE (Flat Buffer Encoding) stream using the
+     *       {@link AccountFinalModel#serialize(Account)} method.</li>
+     *   <li>Verifies the integrity of the serialized data using {@link AccountFinalModel#verify()}.</li>
+     *   <li>Prints the size of the serialized FBE buffer to the console.</li>
+     *   <li>Deserializes the account object from the FBE stream using the
+     *       {@link AccountFinalModel#attach(Buffer)} and {@link AccountFinalModel#deserialize(Account)} methods.</li>
+     *   <li>Prints the content of the account to the console.</li>
+     * </ol>
+     *
+     * @param args Command line arguments passed to the application. This method does not utilize these arguments.
+     *
+     * @throws IllegalArgumentException if any of the account or order parameters are invalid during creation.
+     * @throws SerializationException if an error occurs during serialization of the account.
+     * @throws DeserializationException if an error occurs during deserialization of the account.
+     */
     public static void main(String[] args)
     {
         // Create a new account with some orders

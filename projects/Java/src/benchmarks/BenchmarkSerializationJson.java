@@ -28,6 +28,19 @@ public class BenchmarkSerializationJson
 
     @Benchmark
     @BenchmarkMode(Mode.Throughput)
+    /**
+     * Serializes the account object into a JSON string representation.
+     * <p>
+     * This method converts the current state of the account into a JSON format
+     * using the {@code toJson()} method of the account object. The resulting
+     * JSON string is stored in the {@code _json} variable.
+     * </p>
+     *
+     * @throws NullPointerException if the account object is null or if the
+     *         {@code toJson()} method cannot be called due to a null reference.
+     * @throws JsonProcessingException if there is an error during the JSON
+     *         serialization process.
+     */
     public void serialize()
     {
         // Serialize the account to the JSON string
@@ -36,6 +49,19 @@ public class BenchmarkSerializationJson
 
     @Benchmark
     @BenchmarkMode(Mode.Throughput)
+    /**
+     * Deserializes the account from a JSON string.
+     * <p>
+     * This method converts the JSON representation of an account into an
+     * {@link Account} object and assigns it to the instance variable
+     * {@code _account}. It is expected that the JSON string is properly
+     * formatted and corresponds to the structure of the {@link Account} class.
+     * </p>
+     *
+     * @throws IllegalArgumentException if the JSON string is invalid or does
+     *         not conform to the expected format for an {@link Account}.
+     * @throws NullPointerException if the JSON string is {@code null}.
+     */
     public void deserialize()
     {
         // Deserialize the account from the JSON string

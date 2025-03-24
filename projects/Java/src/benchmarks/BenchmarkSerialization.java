@@ -35,6 +35,16 @@ public class BenchmarkSerialization
 
     @Benchmark
     @BenchmarkMode(Mode.Throughput)
+    /**
+     * Verifies the account by calling the verify method on the associated writer.
+     *
+     * This method performs the necessary checks to ensure that the account is valid
+     * and meets all required criteria. It is essential to call this method before
+     * proceeding with any operations that depend on the account's validity.
+     *
+     * @throws IllegalStateException if the account is not in a valid state for verification.
+     * @throws NullPointerException if the writer is not initialized or is null.
+     */
     public void verify()
     {
         // Verify the account
@@ -43,6 +53,15 @@ public class BenchmarkSerialization
 
     @Benchmark
     @BenchmarkMode(Mode.Throughput)
+    /**
+     * Serializes the account object to the FBE (Fast Binary Encoding) stream.
+     * <p>
+     * This method resets the FBE stream before performing the serialization.
+     * </p>
+     *
+     * @throws IOException if an I/O error occurs during serialization.
+     * @throws SerializationException if the account object cannot be serialized.
+     */
     public void serialize()
     {
         // Reset FBE stream
@@ -54,6 +73,15 @@ public class BenchmarkSerialization
 
     @Benchmark
     @BenchmarkMode(Mode.Throughput)
+    /**
+     * Deserializes the account from the FBE (Flat Buffer Encoding) stream.
+     * This method reads the serialized data and populates the
+     * account object with the corresponding values.
+     *
+     * @throws IOException if an I/O error occurs during deserialization.
+     * @throws IllegalArgumentException if the data format is invalid or
+     *         does not match the expected structure for the account.
+     */
     public void deserialize()
     {
         // Deserialize the account from the FBE stream
